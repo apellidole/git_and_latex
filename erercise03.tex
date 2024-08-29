@@ -1,0 +1,24 @@
+\documentclass[12pt]{article}
+\usepackage{xeCJK}  % 中文支持
+
+\title{实验报告}
+\author{姓名: xxx}
+\date{\today}  % 使用 \today 自动插入当前日期
+
+\begin{document}
+
+\maketitle  % 生成标题页
+
+\section{引言}
+在科学研究中，引用其他文献是非常重要的。比如，你可以参考 \cite{lamport1994latex} 来学习更多关于 LaTeX 的知识。
+
+\section{方法}
+此处可以介绍实验方法，参考文献可以帮助读者理解背景知识 \cite{knuth1984tex}。
+
+\section{结论}
+使用 BibTeX 可以有效地管理参考文献。
+
+\bibliographystyle{plain}  % 选择参考文献样式
+\bibliography{references}  % 引用文献数据库文件
+
+\end{document}
