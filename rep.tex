@@ -1,0 +1,251 @@
+\documentclass[12pt]{article}
+\usepackage{xeCJK} % 中文支持
+\usepackage{geometry}
+\usepackage{graphicx}
+\geometry{a4paper, margin=1in}
+\graphicspath{ {./images/} }
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{listings} % 用于显示代码的包
+\usepackage[export]{adjustbox}
+
+\title{实验报告一}
+\author{姓名:耿铭骏}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section*{实验内容概述}
+本次实验的内容主要是关于文档编辑（LaTeX）与版本控制（Git）的练习。通过以下练习，学习如何用LaTeX进行文档排版设计，以及使用Git进行版本控制。
+
+\section*{练习一：LaTeX 文档编辑练习}
+
+\subsection*{练习内容}
+
+\begin{enumerate}
+    \item 学习如何设置文档的基本格式，如标题、作者、日期等。\\
+    \textbf{解题方法：} 使用 \texttt{\textbackslash title}、\texttt{\textbackslash author} 和 \texttt{\textbackslash date} 等命令来定义文档的基本信息，并使用 \texttt{\textbackslash maketitle} 生成标题页。\\
+    \includegraphics[width=14cm,height=8cm,left]{fir}
+    
+    \item 使用不同的章节、子章节和段落来组织文档结构。\\
+    \textbf{解题方法：} 使用 \texttt{\textbackslash section}、\texttt{\textbackslash subsection} 和 \texttt{\textbackslash paragraph} 等命令来创建层次结构。\\
+    \includegraphics[width=14cm,height=8cm,left]{sec}
+    
+    \item 添加数学公式，使用 \texttt{amsmath} 包来支持数学排版。\\
+    \textbf{解题方法：} 通过环境 \texttt{equation}、\texttt{align} 等插入数学公式，利用 \texttt{\textbackslash usepackage\{amsmath\}} 加强公式功能。\\
+    \includegraphics[width=14cm,height=8cm,left]{th}
+    
+    \item 插入图片设置它们的标题和引用。\\
+    \textbf{解题方法：} 使用 \texttt{\textbackslash includegraphics} 命令插入图片，使用 \texttt{table} 和 \texttt{figure} 环境来创建表格和图形，配合 \texttt{\textbackslash caption} 添加标题。\\
+    \includegraphics[width=14cm,height=8cm,left]{four}
+    
+    \item 使用列表环境来创建项目符号和编号列表。\\
+    \textbf{解题方法：} 使用 \texttt{itemize} 创建无序列表，使用 \texttt{enumerate} 创建有序列表。\\
+    \includegraphics[width=14cm,height=8cm,left]{fif}
+    
+    \item 创建表格和图表，并设置它们的样式。\\
+    \textbf{解题方法：} 使用 \texttt{tabular} 环境创建表格，并使用 \texttt{\textbackslash hline} 和 \texttt{\textbackslash multicolumn} 等命令设置表格样式。\\
+    \includegraphics[width=14cm,height=8cm,left]{6}
+    
+    \item 添加引用和参考文献，并使用 \texttt{bibtex} 管理参考文献。\\
+    \textbf{解题方法：} 在文中使用 \texttt{\textbackslash cite} 引用文献，在文末使用 \texttt{bibliography} 环境列出参考文献。\\
+    \includegraphics[width=14cm,height=8cm,left]{7}
+    
+    \item 设置页面格式。\\
+    \textbf{解题方法：} 使用 \texttt{\textbackslash plain} 设置全局页面样式。\\
+    \includegraphics[width=14cm,height=8cm,left]{8}
+    
+    \item 使用 \texttt{hyperref} 包来生成交叉引用和超链接。\\
+    \textbf{解题方法：} 使用 \texttt{\textbackslash usepackage\{hyperref\}} 生成文档中的超链接。\\
+    \includegraphics[width=14cm,height=8cm,left]{9}
+    
+    \item 在 LaTeX 文档中粘贴代码。\\
+    \textbf{解题方法：} 使用 \texttt{verbatim} 环境来简单粘贴代码。\\
+    \includegraphics[width=14cm,height=8cm,left]{10}
+
+\end{enumerate}\\
+
+
+
+\subsection*{解题感悟}
+这次LaTeX练习，让学到了怎么设置文档的基本信息、添加章节和数学公式，还搞明白了怎么插入图片、创建超链接和粘贴代码。感觉 LaTeX 确实挺厉害的，排版很专业，尤其是公式和图表的排版特别方便。刚开始上手有点不习惯，但熟悉了几个常用命令后，发现其实挺好用的，写出来的东西也更有条理！
+
+\newpage
+
+\section*{练习二：Git 版本控制练习}
+
+\subsection*{练习内容}
+
+\begin{enumerate}
+    \item 克隆课程网站的仓库。\\
+    \textbf{解题方法：} 使用 \texttt{git clone <repository-url>} 命令克隆仓库到本地。\\
+    \includegraphics[width=14cm,height=8cm,left]{11}
+
+    \item 将版本历史可视化并进行探索。\\
+    \textbf{解题方法：} 使用 \texttt{git log} 命令查看版本历史，结合 \texttt{--graph}、\texttt{--oneline} 等选项可视化历史。
+    \begin{verbatim}
+git log --graph --oneline --decorate --all
+\end{verbatim}
+
+选项的作用是：
+   \begin{itemize}
+    \item \texttt{--graph}: 以图形方式显示分支和合并历史。
+    \item \texttt{--oneline}: 每个提交显示在一行，简洁清晰。
+    \item \texttt{--decorate}: 在日志中显示分支和标签的名称。
+    \item \texttt{--all}: 显示所有分支的提交记录。
+\end{itemize}
+\includegraphics[width=14cm,height=8cm,left]{12}
+    
+    \item 确定最后修改 \texttt{README.md} 文件的人。
+    \textbf{解题方法：} 使用 \texttt{git log -p README.md} 查看 \texttt{README.md} 文件的更改记录。\\
+    \begin{verbatim}
+git log -p README.md
+\end{verbatim}
+\begin{itemize}
+    \item \texttt{-p}: 显示每次提交时的更改内容。
+    \item \texttt{README.md}: 仅显示与 \texttt{README.md} 文件相关的提交记录。
+\end{itemize}
+
+
+    
+    \item 找到最后一次修改 \texttt{\_config.yml} 文件中 \texttt{collections:} 行的提交信息。\\
+    \textbf{解题方法：} 使用 \texttt{git blame \_config.yml} 找到对应行，再使用 \texttt{git show <commit>} 查看提交详情。\\
+
+
+ 使用 \texttt{git blame \_config.yml} 命令找到 \texttt{collections:} 行的最后一次修改者及其提交哈希值，然后使用 \texttt{git show <commit>} 查看该提交的详细信息。
+
+
+首先，使用 \texttt{git blame} 命令查看 \texttt{\_config.yml} 文件中 \texttt{collections:} 行的历史记录，并筛选出相关行：
+
+\begin{verbatim}
+$ git blame _config.yml | grep collections
+a88b4eac (Anish Athalye  2020-01-17 15:26:30 -0500 18) collections:
+\end{verbatim}
+
+从输出可以看到，提交哈希值为 \texttt{a88b4eac}，由 Anish Athalye 在 2020 年 1 月 17 日进行的修改。
+
+接下来，使用 \texttt{git show} 命令查看提交 \texttt{a88b4eac} 的详细信息：
+
+\begin{verbatim}
+$ git show --pretty=format:"%s" a88b4eac | head -1
+Redo lectures as a collection
+\end{verbatim}
+
+输出显示该提交的信息是：“Redo lectures as a collection”。\\
+\includegraphics[width=14cm,height=8cm,left]{13}
+    
+    \item 向仓库中添加一个文件并提交，然后将其从历史中删除。\\
+    \textbf{解题方法：} 使用 \texttt{git add} 和 \texttt{git commit} 添加文件，再使用相关命令从历史中删除。
+    \subsubsection*{操作步骤}
+
+1. 向仓库中添加一个文件并提交：
+
+首先，创建一个新文件（如 \texttt{demo.txt}），并将其添加到仓库中：
+
+\begin{verbatim}
+$ echo "This is a demo file" > demo.txt
+$ git add demo.txt
+$ git commit -m "Add demo.txt"
+\end{verbatim}
+
+此时，\texttt{demo.txt} 文件已被添加到仓库的历史记录中。
+
+2. 将文件从历史中删除：
+
+要从 Git 的历史记录中完全删除此文件，我们可以使用 \texttt{git filter-branch} 命令。运行以下命令来移除文件的所有历史记录：
+
+\begin{verbatim}
+$ git filter-branch --force --index-filter "git rm --cached --ignore-unmatch demo.txt" --prune-empty --tag-name-filter cat -- --all
+\end{verbatim}
+
+3. 清理并强制推送更改：
+
+使用 \texttt{git filter-branch} 后，需要清理未使用的文件和对象：
+
+\begin{verbatim}
+$ rm -rf .git/refs/original/
+$ git reflog expire --expire=now --all
+$ git gc --prune=now
+$ git gc --aggressive --prune=now
+\end{verbatim}
+
+\includegraphics[width=14cm,height=8cm,left]{14}
+    
+    \item 克隆某个 GitHub 仓库并修改文件，测试 \texttt{git stash} 和 \texttt{git stash pop} 的效果。\\
+    \textbf{解题方法：} 使用 \texttt{git stash} 暂存修改，执行 \texttt{git log --all --oneline} 查看历史，再使用 \texttt{git stash pop} 恢复。
+    \subsubsection*{操作步骤}
+
+1. 克隆 GitHub 仓库并进入目录：
+
+\begin{verbatim}
+$ git clone https://github.com/missing-semester-cn/missing-semester-cn.github.io.git
+$ cd missing-semester-cn.github.io
+\end{verbatim}
+
+2. 修改一个文件并暂存修改：
+
+\begin{verbatim}
+$ echo "This is a test modification." >> README.md
+$ git stash
+\end{verbatim}
+
+3. 查看版本历史并恢复修改：
+
+\begin{verbatim}
+$ git log --all --oneline
+$ git stash pop
+\end{verbatim}
+    \includegraphics[width=14cm,height=8cm,left]{15}
+    
+    \item 在 \texttt{\textasciitilde/.gitconfig} 中创建 \texttt{git graph} 别名。\\
+    \textbf{解题方法：} 编辑 \texttt{.gitconfig} 文件，添加 \texttt{alias.graph = log --all --graph --decorate --oneline}。
+    
+    \item 创建全局 \texttt{.gitignore} 文件来忽略系统或编辑器的临时文件。\\
+    \textbf{解题方法：} 编辑 \texttt{\textasciitilde/.gitignore\_global} 文件，添加如 \texttt{.DS\_Store} 等忽略规则。
+  
+
+\subsubsection*{操作步骤}
+
+1. 创建全局 \texttt{.gitignore} 文件并配置 Git 使用它：
+
+\begin{verbatim}
+$ touch ~/.gitignore_global
+$ git config --global core.excludesfile ~/.gitignore_global
+\end{verbatim}
+
+2. 编辑 \texttt{~/.gitignore\_global} 文件，添加要忽略的文件类型：
+
+\begin{verbatim}
+# 忽略 macOS 系统文件
+.DS_Store
+
+# 忽略编辑器临时文件
+*.swp
+\end{verbatim}
+
+    
+    \item 修改提交信息的别名。\\
+\textbf{解题方法：} 创建一个新的 Git 别名来修改提交信息，在 \texttt{git amend}。编辑 \texttt{\textasciitilde/.gitconfig} 文件，添加以下行：\texttt{alias.amend = commit --amend}。
+
+\item 重置到特定的提交。\\
+\textbf{解题方法：} 使用 \texttt{git reset} 命令将当前分支重置到某个特定的提交。使用 \texttt{git reset --hard <commit-id>} 将分支回滚到指定的提交。\\
+\includegraphics[width=14cm,height=8cm,left]{16}
+\end{enumerate}
+
+
+
+\subsection*{解题感悟}
+这些练习让我更加熟悉了Git的基本操作，特别是版本控制和回滚的技巧。比如使用git log查看历史、git stash保存修改、git reset回滚到特定提交等，发现Git确实很强大。虽然刚开始有点不太习惯，但多试几次后就顺手了，实际开发中会使用git进行控制管理。
+
+\subsection*{GitHub 链接}
+
+本次实验报告的源代码已上传到 GitHub，您可以通过以下链接查看完整的报告和代码：
+
+\url{https://github.com/apellidole/git_and_latex.git}
+
+
+\end{document}
